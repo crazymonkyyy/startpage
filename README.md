@@ -1,6 +1,8 @@
 ## steps
 1. edit links.mix
+
 1.5. mess with a "base 16 yaml" theme, edit the code to point at it
+
 2. dmd -J=. -i -run startpage.d
 3. tell your broswer to open tabs on index.html
 
