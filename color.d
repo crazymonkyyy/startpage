@@ -37,8 +37,26 @@ color tocolor(string s){
 		s[4].hextoint*16+s[5].hextoint,
 	);
 }
-enum color[16][string] base16=(){
-	color[16][string] o;
+struct keyarray(T,S){
+	T[] keys;
+	S[] values;
+	void opIndexAssign(S v,T k){
+		keys~=k;
+		values~=v;
+	}
+	S opIndex(T k){
+		import std;
+		auto i=keys.countUntil(k);
+		if(i==-1){
+			keys~=k;
+			values~=S.init;
+			return values[$-1];
+		}
+		return values[i];
+	}
+}
+auto base16=(){
+	keyarray!(string,color[16]) o;
 	foreach(s;import(filename).split('\n')){
 		auto a=s.splitter(',').array.to!(string[]);
 		o[a[0]]=a[1..$].filter!(a=>a.length==6).map!tocolor.staticArray!16;
