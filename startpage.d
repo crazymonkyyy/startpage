@@ -25,7 +25,11 @@ void main(string[] s){
 		if(s[3]!="none"){
 			pic=s[3];
 	}}
-	o=File("index.html", "w");
+	string file="index.html";
+	if(s.length>=5){
+		file=s[4];
+	}
+	o=File(file, "w");
 	"<!DOCTYPE html>".w;
 	"<html>".w;
 	"<head>".w;
@@ -76,7 +80,7 @@ void main(string[] s){
 	
 	tab--;"</style>".w; "<head>".w; "<body>".w;
 	//"<h1> this is a startpage</h1>".w;
-	("<img src="~"solarized.png"~" class='top'>").w;
+	("<img src="~pic~" class='top'>").w;
 	"<div class='bot'>".w;tab++;
 	"<div><p></div>".w;
 	"<div class='flex-container'>".w; tab++;
