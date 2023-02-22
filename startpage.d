@@ -14,6 +14,17 @@ void main(string[] s){
 	import linkfile;
 	pokerange;
 	
+	if(s.length>=2){
+		inputfile=s[1];
+	}
+	if(s.length>=3){
+		theme=s[2];
+	}
+	string pic;
+	if(s.length>=4){
+		if(s[3]!="none"){
+			pic=s[3];
+	}}
 	o=File("index.html", "w");
 	"<!DOCTYPE html>".w;
 	"<html>".w;
@@ -24,6 +35,12 @@ void main(string[] s){
 	"	align-items: center;".w;
 	"	justify-content: center;".w;
 	("	background-color:"~background.tohex~";").w;
+	"}".w;
+	".top {".w;
+	"	position:absolute;".w;
+	"	top: 15vh;".w;
+	"	max-height:40vh;".w;
+	"	max-width:33vw;".w;
 	"}".w;
 	".bot{".w;
 	"	display: flex;".w;
@@ -59,6 +76,7 @@ void main(string[] s){
 	
 	tab--;"</style>".w; "<head>".w; "<body>".w;
 	//"<h1> this is a startpage</h1>".w;
+	("<img src="~"solarized.png"~" class='top'>").w;
 	"<div class='bot'>".w;tab++;
 	"<div><p></div>".w;
 	"<div class='flex-container'>".w; tab++;

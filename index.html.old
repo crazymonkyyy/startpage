@@ -7,13 +7,14 @@
 		align-items: center;
 		justify-content: center;
 		background-color:#002B36;
+		flex-direction: column;
 	}
-	.top {
-		position:absolute;
-		top: 15vh;
-		max-height:40vh;
-		max-width:33vw;
-	}
+.top {
+	position:absolute;
+	top: 15vh;
+	max-height:40vh;
+	max-width:33vw;
+}
 	.bot{
 		display: flex;
 		position: fixed;
@@ -112,8 +113,10 @@
 	}
 </style>
 <head>
+
 <body>
-<img src=solarized.png class='top'>
+
+  <img src="solarized.png" class="top">
 <div class='bot'>
 	<div><p></div>
 	<div class='flex-container'>
